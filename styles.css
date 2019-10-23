@@ -1,0 +1,87 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* user code starts here */
+  background-color: rgb(99, 172, 132);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.firstbar,
+.secondbar,
+.thirdbar {
+  background-color: white;
+  height: 8px;
+  width: 80px;
+  margin: 14px;
+  border-radius: 3px;
+  box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.3);
+  /* transition: all 0.4s; */
+}
+
+.secondbar {
+  /* transform: scale(0, 0) */
+}
+
+.shrink {
+  transform: scale(0, 0);
+}
+
+.rotate_animation {
+  animation: animate_firstbar_rotate 0.5s linear;
+}
+
+.slide_animation {
+  animation: animate_firstbar_slide 0.5s linear;
+}
+
+.firstbar_finish {
+  transform: translate(0, 22px);
+  transform: rotate(0.2turn);
+}
+
+@keyframes animate_firstbar_rotate {
+  100% {
+    transition-delay: 0.5s;
+    transform: rotate(0.2turn);
+  }
+}
+
+@keyframes animate_firstbar_slide {
+  100% {
+    transform: translate(0, 22px);
+  }
+}
+
+.slideup {
+  transform: translate(0, -22px);
+}
+
+.rotateright {
+  transition-delay: 1s;
+  transform: rotate(0.2turn);
+}
+
+.rotateleft {
+  transition-delay: 1s;
+  transform: rotate(-0.2turn);
+}
