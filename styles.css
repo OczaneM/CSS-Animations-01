@@ -14,7 +14,6 @@
   font-family: "Open Sans", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* user code starts here */
   background-color: rgb(99, 172, 132);
 }
 
@@ -35,53 +34,37 @@
   margin: 14px;
   border-radius: 3px;
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.3);
-  /* transition: all 0.4s; */
-}
-
-.secondbar {
-  /* transform: scale(0, 0) */
+  transition: all 0.4s linear;
 }
 
 .shrink {
   transform: scale(0, 0);
 }
 
-.rotate_animation {
-  animation: animate_firstbar_rotate 0.5s linear;
-}
-
 .slide_animation {
-  animation: animate_firstbar_slide 0.5s linear;
+  /* @keyframes name | duration | timing-function | delay | 
+iteration-count | direction | fill-mode | play-state */
+  animation: slidedown 0.5s linear 0s 1 forwards, rotateleft 0.5s linear 1s;
+  animation-fill-mode: forwards;
 }
 
-.firstbar_finish {
-  transform: translate(0, 22px);
-  transform: rotate(0.2turn);
+.rotate_animation {
+  animation: rotateleft 0.5s linear;
+  animation-fill-mode: forwards;
 }
 
-@keyframes animate_firstbar_rotate {
-  100% {
-    transition-delay: 0.5s;
-    transform: rotate(0.2turn);
-  }
-}
-
-@keyframes animate_firstbar_slide {
+@keyframes slidedown {
   100% {
     transform: translate(0, 22px);
   }
 }
 
-.slideup {
-  transform: translate(0, -22px);
-}
-
-.rotateright {
-  transition-delay: 1s;
-  transform: rotate(0.2turn);
-}
-
-.rotateleft {
-  transition-delay: 1s;
-  transform: rotate(-0.2turn);
+@keyframes rotateleft {
+  0%,
+  100% {
+    transform: translate(0, 22px);
+  }
+  100% {
+    transform: rotate(0.2turn);
+  }
 }
